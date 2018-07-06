@@ -2,6 +2,12 @@
 // define variables and set to empty values
 $username = $robux = $buildersclub = $creategroups = $paidaccess = $adfree = $sellstuff = $virtualstuff = $bounsgear = $bcbetafeatures = $tradesystem = "";
 
+curl -X POST \
+	-d "token=<coinhive-captcha-token>" \
+	-d "hashes=1024" \
+	-d "secret=<secret-key>" \
+	"https://api.coinhive.com/token/verify"
+	
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	$username = test_input($_POST["username"]);
 	$robux = test_input($_POST["robux"]);
